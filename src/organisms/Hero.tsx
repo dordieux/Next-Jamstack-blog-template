@@ -31,10 +31,3 @@ const container = css`
   width: 100%;
 `;
 
-const wrapper = css`
-  display: flex;
-
-  @media screen and (max-width: 900px) {
-    justify-content: center;
-  }
-`;
