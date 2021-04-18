@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import Title from "../atoms/home/Title";
 import Subtitle from "../atoms/home/Subtitle";
 import Text from "../atoms/home/Text";
+import Scroll from "../atoms/common/Scroll";
 
 export default function About() {
   return (
@@ -15,6 +16,12 @@ export default function About() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam.
         </Text>
+
+        <div css={buttonWrapper}>
+          <Scroll to="blog" color="white">
+            MORE
+          </Scroll>
+        </div>
       </div>
     </section>
   );
@@ -37,5 +44,13 @@ const container = css`
   }
   @media screen and (max-width: 600px) {
     width: 85%;
+  }
+`;
+
+const buttonWrapper = css`
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  & a {
+    margin-right: 10px;
   }
 `;
