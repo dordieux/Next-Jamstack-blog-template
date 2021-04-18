@@ -1,10 +1,10 @@
 import React from "react";
 import { css } from "@emotion/react";
 
-import Title from "../atoms/home/Title";
-import Subtitle from "../atoms/home/Subtitle";
-import Text from "../atoms/home/Text";
-import Scroll from "../atoms/common/Scroll";
+import Title from "../../atoms/home/Title";
+import Subtitle from "../../atoms/home/Subtitle";
+import Text from "../../atoms/home/Text";
+import Scroll from "../../atoms/common/Scroll";
 
 export default function Blog() {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
 
-import ScrollToTop from "../atoms/common/ScrollToTop";
-import GitHubLink from "../molecules/common/GithubLink";
-import LinkedInLink from "../molecules/common/LinkedInLink";
+import ScrollToTop from "../../atoms/common/ScrollToTop";
+import GitHubLink from "../../molecules/common/GithubLink";
+import LinkedInLink from "../../molecules/common/LinkedInLink";
 
 export default function Footer() {
   return (

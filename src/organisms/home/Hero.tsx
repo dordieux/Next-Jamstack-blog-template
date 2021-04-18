@@ -1,8 +1,8 @@
 import React from "react";
 import { css } from "@emotion/react";
 
-import Intro from "../molecules/Intro";
-import Scroll from "../atoms/common/Scroll";
+import Intro from "../../molecules/home/Intro";
+import Scroll from "../../atoms/common/Scroll";
 
 export default function Hero() {
   return (

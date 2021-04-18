@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 
-import AnimatedLinkButton from "../molecules/common/AnimatedLinkButton";
+import AnimatedLinkButton from "../../molecules/common/AnimatedLinkButton";
 
 export default function Contact() {
   return (
