@@ -1,12 +1,17 @@
 import React from "react";
 import { css } from "@emotion/react";
 
+import AnimatedLinkButton from "../molecules/common/AnimatedLinkButton";
+
 export default function Contact() {
   return (
     <section id="contact" css={section}>
       <div css={continaer}>
         <h3 css={title}>CONTACT</h3>
         <p>Would you like to work with me? Awesome!</p>
+        <AnimatedLinkButton to="mailto:email@gmail.com" color="white">
+          Let's Talk!
+        </AnimatedLinkButton>
       </div>
     </section>
   );
