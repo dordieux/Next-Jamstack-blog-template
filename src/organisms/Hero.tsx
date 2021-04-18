@@ -30,4 +30,3 @@ const section = css`
 const container = css`
   width: 100%;
 `;
-

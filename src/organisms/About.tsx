@@ -12,7 +12,8 @@ export default function About() {
         <Title color="white">About me</Title>
         <Subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Subtitle>
         <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
         </Text>
       </div>
     </section>

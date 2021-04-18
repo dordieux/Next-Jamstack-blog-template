@@ -5,12 +5,12 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-      <>
-        <Head>
-          <Global styles={global} />
-        </Head>
-        <Component {...pageProps} />
-      </>
+    <>
+      <Head>
+        <Global styles={global} />
+      </Head>
+      <Component {...pageProps} />
+    </>
   );
 }
 
