@@ -4,6 +4,7 @@ import Hero from "../organisms/Hero";
 import About from "../organisms/About";
 import Blog from "../organisms/Blog";
 import Contact from "../organisms/Contact";
+import Footer from "../organisms/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Blog />
       <Contact />
+      <Footer />
     </>
   );
 }
