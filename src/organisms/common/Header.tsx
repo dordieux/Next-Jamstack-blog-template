@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { css } from "@emotion/react";
 
 import StyledHeader from "../../atoms/header/Header";
 import Title from "../../atoms/header/Title";
 import HeaderLinks from "../../molecules/header/HeaderLinks";
+import { MdMenu } from "react-icons/md";
+import SimpleButton from "../../atoms/common/SimpleButton";
+import SideNavBar from "../../molecules/header/SideNavBar";
 
 export default function Header() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const handleSidebarOpenToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <StyledHeader>
-      <div css={container}>
-        <nav css={navBar}>
-          <div css={flex}>
-            <Title />
-          </div>
-          <div css={link}>
-            <HeaderLinks />
-          </div>
-        </nav>
-      </div>
-    </StyledHeader>
+    <>
+      <StyledHeader>
+        <div css={container}>
+          <nav css={navBar}>
+            <div css={flex}>
+              <Title />
+            </div>
+            <div css={link}>
+              <HeaderLinks />
+            </div>
+            <div css={menu} onClick={handleSidebarOpenToggle}>
+              <SimpleButton>
+                <MdMenu size="24" />
+              </SimpleButton>
+            </div>
+          </nav>
+        </div>
+      </StyledHeader>
+      <SideNavBar isOpen={isSidebarOpen} onClose={handleSidebarOpenToggle} />
+    </>
   );
 }
 
@@ -48,5 +64,12 @@ const flex = css`
 const link = css`
   @media screen and (max-width: 800px) {
     display: none;
+  }
+`;
+
+const menu = css`
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
   }
 `;
