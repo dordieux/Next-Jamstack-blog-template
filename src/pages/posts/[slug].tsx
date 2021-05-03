@@ -3,6 +3,7 @@ import React from "react";
 
 import { getPostBySlug, getSlugs } from "../../lib/contentful";
 import { Post } from "../../lib/types";
+import Headline from "../../molecules/post/Headline";
 import Footer from "../../organisms/common/Footer";
 import Header from "../../organisms/common/Header";
 
@@ -16,9 +17,7 @@ export default function PostPage({ post }: Props) {
     <>
       <Header />
       <div css={container}>
-        <p>{post.publishedAt}</p>
-        <p>{post.title}</p>
-        <p>{post.subtitle}</p>
+        <Headline post={post} />
         <p>{post.body}</p>
       </div>
       <Footer />
@@ -36,7 +35,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const slugs: string[] = await getSlugs();
+  const slugs = await getSlugs();
   const paths = slugs.map((slug) => ({ params: { slug } }));
 
   return {
