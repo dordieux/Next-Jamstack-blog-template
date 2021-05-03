@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { GetStaticPropsResult } from "next";
 import React from "react";
 
 import { getPostBySlug, getSlugs } from "../../lib/contentful";
@@ -9,7 +10,6 @@ import Header from "../../organisms/common/Header";
 
 type Props = {
   post: Post;
-  title: string;
 };
 
 export default function PostPage({ post }: Props) {
@@ -25,7 +25,7 @@ export default function PostPage({ post }: Props) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }): Promise<GetStaticPropsResult<Props>> {
   const res = await getPostBySlug(params.slug);
   return {
     props: {

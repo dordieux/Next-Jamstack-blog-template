@@ -9,6 +9,15 @@ const client = require("contentful").createClient({
   accessToken: accessToken,
 });
 
+export async function getPosts() {
+  const entries: PostEntries = await client.getEntries({
+    content_type: post,
+    order: "-fields.publishedAt",
+  });
+
+  return entries.items.map((item) => convertPost(item));
+}
+
 export async function getPostBySlug(slug: string) {
   const entries: PostEntries = await client.getEntries({
     content_type: post,
