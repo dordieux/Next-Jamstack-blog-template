@@ -47,5 +47,13 @@ export async function getStaticPaths() {
 const container = css`
   padding-top: 150px;
   margin: 0px auto 50px;
+
   width: 60%;
+  @media screen and (max-width: 900px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 600px) {
+    padding-top: 130px;
+    width: 90%;
+  }
 `;
