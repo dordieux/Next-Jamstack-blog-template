@@ -6,6 +6,7 @@ import Footer from "../../organisms/common/Footer";
 import { GetStaticPropsResult } from "next";
 import { css } from "@emotion/react";
 import { getPosts } from "../../lib/contentful";
+import Posts from "../../organisms/post/Posts";
 
 type Props = {
   posts: Post[];
@@ -16,11 +17,7 @@ export default function PostsPage({ posts }: Props) {
     <>
       <Header />
       <div css={container}>
-        <div>
-          {posts.map((post) => {
-            return <p>{post.title}</p>;
-          })}
-        </div>
+        <Posts posts={posts} />
       </div>
       <Footer />
     </>
