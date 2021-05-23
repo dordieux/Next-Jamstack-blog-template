@@ -6,9 +6,5 @@ type Props = {
 };
 
 export default function PostBody({ children }: Props) {
-  return (
-    <div>
-      <Markdown>{children}</Markdown>
-    </div>
-  );
+  return <Markdown>{children}</Markdown>;
 }
