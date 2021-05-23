@@ -7,6 +7,7 @@ import { Post } from "../../lib/types";
 import Headline from "../../molecules/post/Headline";
 import Footer from "../../organisms/common/Footer";
 import Header from "../../organisms/common/Header";
+import PostBody from "../../organisms/post/PostBody";
 
 type Props = {
   post: Post;
@@ -18,7 +19,7 @@ export default function PostPage({ post }: Props) {
       <Header />
       <div css={container}>
         <Headline post={post} />
-        <p>{post.body}</p>
+        <PostBody>{post.body}</PostBody>
       </div>
       <Footer />
     </>
