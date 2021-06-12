@@ -1,7 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
+
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { hybrid } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 type Props = {
   children: string;
@@ -10,7 +12,24 @@ type Props = {
 export default function Markdown(props: Props) {
   return (
     <div css={markdown}>
-      <ReactMarkdown plugins={[gfm]}>{props.children}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || "");
+            return !inline && match ? (
+              <SyntaxHighlighter
+                style={hybrid}
+                language={match[1]}
+                children={String(children).replace(/\n$/, "")}
+                {...props}
+              />
+            ) : (
+              <code className={className}>{children}</code>
+            );
+          },
+        }}>
+        {props.children}
+      </ReactMarkdown>
     </div>
   );
 }
