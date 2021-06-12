@@ -1,12 +1,12 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import Title from "../../atoms/home/Title";
-import Subtitle from "../../atoms/home/Subtitle";
-import Text from "../../atoms/home/Text";
-import Scroll from "../../atoms/common/Scroll";
+import { Title } from "../../atoms/home/Title";
+import { Subtitle } from "../../atoms/home/Subtitle";
+import { Text } from "../../atoms/home/Text";
+import { Scroll } from "../../atoms/common/Scroll";
 
-export default function About() {
+export const About: VFC = () => {
   return (
     <section id="about" css={section}>
       <div css={container}>
@@ -25,7 +25,7 @@ export default function About() {
       </div>
     </section>
   );
-}
+};
 
 const section = css`
   background-image: linear-gradient(135deg, #02aab0 0%, #00cdac 100%);

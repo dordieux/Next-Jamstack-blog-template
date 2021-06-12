@@ -1,7 +1,7 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-export default function Intro() {
+export const Intro: VFC = () => {
   return (
     <h1 css={hero}>
       Hi, my name is <span css={name}>Your Name</span>
@@ -9,7 +9,7 @@ export default function Intro() {
       I'm Developer.
     </h1>
   );
-}
+};
 
 const hero = css`
   font-size: 5.6rem;

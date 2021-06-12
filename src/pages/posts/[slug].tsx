@@ -1,19 +1,19 @@
-import { css } from "@emotion/react";
-import { GetStaticPropsResult } from "next";
 import React from "react";
+import { css } from "@emotion/react";
+import { GetStaticPropsResult, NextPage } from "next";
 
 import { getPostBySlug, getSlugs } from "../../lib/contentful";
 import { Post } from "../../lib/types";
-import Headline from "../../molecules/post/Headline";
-import Footer from "../../organisms/common/Footer";
-import Header from "../../organisms/common/Header";
-import PostBody from "../../organisms/post/PostBody";
+import { Headline } from "../../molecules/post/Headline";
+import { Footer } from "../../organisms/common/Footer";
+import { Header } from "../../organisms/common/Header";
+import { PostBody } from "../../organisms/post/PostBody";
 
 type Props = {
   post: Post;
 };
 
-export default function PostPage({ post }: Props) {
+const PostPage: NextPage<Props> = ({ post }) => {
   return (
     <>
       <Header />
@@ -24,7 +24,9 @@ export default function PostPage({ post }: Props) {
       <Footer />
     </>
   );
-}
+};
+
+export default PostPage;
 
 export async function getStaticProps({ params }): Promise<GetStaticPropsResult<Props>> {
   const res = await getPostBySlug(params.slug);

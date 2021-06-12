@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { VFC } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { hybrid } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import type { CodeComponent } from "react-markdown/src/ast-to-react";
 
 type CodeProps = Parameters<CodeComponent>[0];
 
-export const CodeBlock: FC<CodeProps> = ({ node, inline, className, children, ...props }) => {
+export const CodeBlock: VFC<CodeProps> = ({ node, inline, className, children, ...props }) => {
   const match = /language-(\w+)/.exec(className || "");
   return !inline && match ? (
     <SyntaxHighlighter

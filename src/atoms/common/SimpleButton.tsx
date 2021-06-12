@@ -1,13 +1,13 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export default function SimpleButton(props: Props) {
-  return <span css={style}>{props.children}</span>;
-}
+export const SimpleButton: VFC<Props> = ({ children }) => {
+  return <span css={style}>{children}</span>;
+};
 
 const style = css`
   display: inline-flex;

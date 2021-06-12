@@ -1,10 +1,10 @@
-import React from "react";
+import React, { VFC } from "react";
 
-import LinkButton from "../common/LinkButton";
-import GitHubLink from "../common/GithubLink";
+import { LinkButton } from "../common/LinkButton";
+import { GitHubLink } from "../common/GithubLink";
 import { css } from "@emotion/react";
 
-export default function HeaderLinks() {
+export const HeaderLinks: VFC = () => {
   return (
     <ul css={list}>
       <li css={item}>
@@ -20,7 +20,7 @@ export default function HeaderLinks() {
       </li>
     </ul>
   );
-}
+};
 
 const list = css`
   margin: 0;

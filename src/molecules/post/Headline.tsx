@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 import { Post } from "../../lib/types";
@@ -7,7 +7,7 @@ type Props = {
   post: Post;
 };
 
-export default function Headline({ post }: Props) {
+export const Headline: VFC<Props> = ({ post }) => {
   return (
     <>
       <p css={publishedAt}>{post.publishedAt.split("T")[0]}</p>
@@ -18,7 +18,7 @@ export default function Headline({ post }: Props) {
       </figure>
     </>
   );
-}
+};
 
 const publishedAt = css`
   color: #757575;

@@ -1,25 +1,25 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import HeaderLinks from "./HeaderLinks";
-import Backdrop from "../../atoms/header/Backdrop";
+import { HeaderLinks } from "./HeaderLinks";
+import { Backdrop } from "../../atoms/header/Backdrop";
 
 type Props = {
   isOpen: Boolean;
   onClose: any;
 };
 
-export default function SideNavBar(props: Props) {
-  const classes = props.isOpen ? [sideNavBar, open] : sideNavBar;
+export const SideNavBar: VFC<Props> = ({ isOpen, onClose }) => {
+  const classes = isOpen ? [sideNavBar, open] : sideNavBar;
   return (
     <>
       <nav css={classes}>
         <HeaderLinks />
       </nav>
-      {props.isOpen ? <Backdrop onClose={props.onClose} /> : null}
+      {isOpen ? <Backdrop onClose={onClose} /> : null}
     </>
   );
-}
+};
 
 const sideNavBar = css`
   position: fixed;

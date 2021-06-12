@@ -1,21 +1,21 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import AnimatedLinkButton from "../../molecules/common/AnimatedLinkButton";
+import { AnimatedLink } from "../../molecules/common/AnimatedLinkButton";
 
-export default function Contact() {
+export const Contact: VFC = () => {
   return (
     <section id="contact" css={section}>
       <div css={continaer}>
         <h3 css={title}>CONTACT</h3>
         <p>Would you like to work with me? Awesome!</p>
-        <AnimatedLinkButton to="mailto:email@gmail.com" color="white">
+        <AnimatedLink to="mailto:email@gmail.com" color="white">
           Let's Talk!
-        </AnimatedLinkButton>
+        </AnimatedLink>
       </div>
     </section>
   );
-}
+};
 
 const section = css`
   background-image: linear-gradient(135deg, #02aab0 0%, #00cdac 100%);

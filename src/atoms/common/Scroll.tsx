@@ -1,17 +1,17 @@
-import React from "react";
+import React, { VFC } from "react";
 import { Link } from "react-scroll";
-import AnimatedButton from "./AnimatedButton";
-
-export default function Scroll({ color = "main", ...props }: Props) {
-  return (
-    <Link to={props.to} smooth duration={1000}>
-      <AnimatedButton color={color}>{props.children}</AnimatedButton>
-    </Link>
-  );
-}
+import { AnimatedButton } from "./AnimatedButton";
 
 type Props = {
   color?: "main" | "white";
   to: string;
   children: string;
+};
+
+export const Scroll: VFC<Props> = ({ color = "main", to, children }: Props) => {
+  return (
+    <Link to={to} smooth duration={1000}>
+      <AnimatedButton color={color}>{children}</AnimatedButton>
+    </Link>
+  );
 };

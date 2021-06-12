@@ -1,10 +1,10 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import Intro from "../../molecules/home/Intro";
-import Scroll from "../../atoms/common/Scroll";
+import { Intro } from "../../molecules/home/Intro";
+import { Scroll } from "../../atoms/common/Scroll";
 
-export default function Hero() {
+export const Hero: VFC = () => {
   return (
     <section css={section}>
       <div css={container}>
@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};
 
 const section = css`
   display: flex;

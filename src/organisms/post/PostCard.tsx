@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 
 import Link from "next/link";
 import { css } from "@emotion/react";
@@ -8,7 +8,7 @@ type Props = {
   post: Post;
 };
 
-export default function PostCard({ post }: Props) {
+export const PostCard: VFC<Props> = ({ post }) => {
   return (
     <div>
       <Link href={`/posts/${post.slug}`} passHref>
@@ -25,7 +25,7 @@ export default function PostCard({ post }: Props) {
       </Link>
     </div>
   );
-}
+};
 
 const card = css`
   cursor: pointer;

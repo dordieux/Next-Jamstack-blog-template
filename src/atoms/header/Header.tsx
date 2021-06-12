@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { VFC, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export default function Header(props: Props) {
+export const Header: VFC<Props> = (props: Props) => {
   const [isTop, setIsTop] = useState(true);
 
   function onScroll() {
@@ -21,7 +21,7 @@ export default function Header(props: Props) {
   const styles = isTop ? [header, transparent] : header;
 
   return <header css={styles}>{props.children}</header>;
-}
+};
 
 const header = css`
   position: fixed;

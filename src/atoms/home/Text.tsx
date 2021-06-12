@@ -1,13 +1,13 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
   children: string;
 };
 
-export default function Text(props: Props) {
-  return <p css={text}>{props.children}</p>;
-}
+export const Text: VFC<Props> = ({ children }) => {
+  return <p css={text}>{children}</p>;
+};
 
 const text = css`
   font-size: 2rem;

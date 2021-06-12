@@ -1,13 +1,13 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
   children: string;
 };
 
-export default function Subtitle(props: Props) {
-  return <h3 css={subtitle}>{props.children}</h3>;
-}
+export const Subtitle: VFC<Props> = ({ children }) => {
+  return <h3 css={subtitle}>{children}</h3>;
+};
 
 const subtitle = css`
   font-size: 6.5rem;

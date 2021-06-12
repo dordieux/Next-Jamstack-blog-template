@@ -1,9 +1,9 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-export default function Title() {
+export const Title: VFC = () => {
   return <span css={title}>Your Name Blog</span>;
-}
+};
 
 const title = css`
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;

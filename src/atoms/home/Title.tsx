@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
@@ -6,10 +6,10 @@ type Props = {
   children: string;
 };
 
-export default function Title(props: Props) {
-  const color = props.color === "white" ? white : gray;
-  return <h2 css={[title, color]}>{props.children}</h2>;
-}
+export const Title: VFC<Props> = ({ color, children }) => {
+  const font = color === "white" ? white : gray;
+  return <h2 css={[title, font]}>{children}</h2>;
+};
 
 const title = css`
   font-size: 3.5rem;

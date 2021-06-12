@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { VFC, useState } from "react";
 import { css } from "@emotion/react";
 
-import StyledHeader from "../../atoms/header/Header";
-import Title from "../../atoms/header/Title";
-import HeaderLinks from "../../molecules/header/HeaderLinks";
+import { Header as StyledHeader } from "../../atoms/header/Header";
+import { Title } from "../../atoms/header/Title";
+import { HeaderLinks } from "../../molecules/header/HeaderLinks";
 import { MdMenu } from "react-icons/md";
-import SimpleButton from "../../atoms/common/SimpleButton";
-import SideNavBar from "../../molecules/header/SideNavBar";
+import { SimpleButton } from "../../atoms/common/SimpleButton";
+import { SideNavBar } from "../../molecules/header/SideNavBar";
 
-export default function Header() {
+export const Header: VFC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const handleSidebarOpenToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -36,7 +36,7 @@ export default function Header() {
       <SideNavBar isOpen={isSidebarOpen} onClose={handleSidebarOpenToggle} />
     </>
   );
-}
+};
 
 const container = css`
   box-sizing: border-box;

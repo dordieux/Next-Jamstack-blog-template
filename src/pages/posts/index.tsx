@@ -1,18 +1,18 @@
 import React from "react";
 
 import { Post } from "../../lib/types";
-import Header from "../../organisms/common/Header";
-import Footer from "../../organisms/common/Footer";
-import { GetStaticPropsResult } from "next";
+import { Header } from "../../organisms/common/Header";
+import { Footer } from "../../organisms/common/Footer";
+import { GetStaticPropsResult, NextPage } from "next";
 import { css } from "@emotion/react";
 import { getPosts } from "../../lib/contentful";
-import Posts from "../../organisms/post/Posts";
+import { Posts } from "../../organisms/post/Posts";
 
 type Props = {
   posts: Post[];
 };
 
-export default function PostsPage({ posts }: Props) {
+const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
     <>
       <Header />
@@ -22,7 +22,9 @@ export default function PostsPage({ posts }: Props) {
       <Footer />
     </>
   );
-}
+};
+
+export default PostsPage;
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const posts = await getPosts();

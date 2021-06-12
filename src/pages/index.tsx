@@ -1,13 +1,14 @@
 import React from "react";
 
-import Header from "../organisms/common/Header";
-import Hero from "../organisms/home/Hero";
-import About from "../organisms/home/About";
-import Blog from "../organisms/home/Blog";
-import Contact from "../organisms/common/Contact";
-import Footer from "../organisms/common/Footer";
+import { Header } from "../organisms/common/Header";
+import { Hero } from "../organisms/home/Hero";
+import { About } from "../organisms/home/About";
+import { Blog } from "../organisms/home/Blog";
+import { Contact } from "../organisms/common/Contact";
+import { Footer } from "../organisms/common/Footer";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Header />
@@ -18,4 +19,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 
@@ -8,13 +8,13 @@ type Props = {
   children: string;
 };
 
-export default function Markdown(props: Props) {
+export const Markdown: VFC<Props> = ({ children }) => {
   return (
     <div css={markdown}>
-      <ReactMarkdown components={{ code: CodeBlock }}>{props.children}</ReactMarkdown>
+      <ReactMarkdown components={{ code: CodeBlock }}>{children}</ReactMarkdown>
     </div>
   );
-}
+};
 
 const h2 = css`
   h2 {

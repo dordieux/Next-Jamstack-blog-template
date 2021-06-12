@@ -1,23 +1,23 @@
-import React from "react";
+import React, { VFC } from "react";
 import Link from "next/link";
 import { css } from "@emotion/react";
 
-import SimpleButton from "../../atoms/common/SimpleButton";
+import { SimpleButton } from "../../atoms/common/SimpleButton";
 
 type Props = {
   to: string;
   children: React.ReactNode;
 };
 
-export default function LinkButton(props: Props) {
+export const LinkButton: VFC<Props> = ({ to, children }) => {
   return (
-    <Link href={props.to} passHref>
+    <Link href={to} passHref>
       <a css={link}>
-        <SimpleButton>{props.children}</SimpleButton>
+        <SimpleButton>{children}</SimpleButton>
       </a>
     </Link>
   );
-}
+};
 
 const link = css`
   font-size: 14px;

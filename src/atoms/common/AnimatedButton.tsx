@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 type Props = {
@@ -6,10 +6,10 @@ type Props = {
   children: string;
 };
 
-export default function AnimatedButton({ color = "main", ...props }: Props) {
+export const AnimatedButton: VFC<Props> = ({ color = "main", children }) => {
   const action = color === "main" ? main : white;
-  return <span css={[button, action]}>{props.children}</span>;
-}
+  return <span css={[button, action]}>{children}</span>;
+};
 
 const button = css`
   font-size: 1.5rem;

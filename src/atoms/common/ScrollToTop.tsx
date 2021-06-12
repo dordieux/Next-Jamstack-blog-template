@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 import { animateScroll } from "react-scroll";
 import { MdExpandLess } from "react-icons/md";
@@ -7,9 +7,9 @@ const scrollToTop = () => {
   animateScroll.scrollToTop();
 };
 
-export default function ScrollToTop() {
+export const ScrollToTop: VFC = () => {
   return <MdExpandLess onClick={scrollToTop} css={style} />;
-}
+};
 
 const style = css`
   width: 30px;

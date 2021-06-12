@@ -1,11 +1,11 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import ScrollToTop from "../../atoms/common/ScrollToTop";
-import GitHubLink from "../../molecules/common/GithubLink";
-import LinkedInLink from "../../molecules/common/LinkedInLink";
+import { ScrollToTop } from "../../atoms/common/ScrollToTop";
+import { GitHubLink } from "../../molecules/common/GithubLink";
+import { LinkedInLink } from "../../molecules/common/LinkedInLink";
 
-export default function Footer() {
+export const Footer: VFC = () => {
   return (
     <footer css={footer}>
       <div css={scrollToTop}>
@@ -20,7 +20,7 @@ export default function Footer() {
       <p>Developed by Your Name</p>
     </footer>
   );
-}
+};
 
 const footer = css`
   background-color: #333333;

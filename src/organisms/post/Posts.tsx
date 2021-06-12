@@ -1,14 +1,14 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
 import { Post } from "../../lib/types";
-import PostCard from "./PostCard";
+import { PostCard } from "./PostCard";
 
 type Props = {
   posts: Post[];
 };
 
-export default function Posts({ posts }: Props) {
+export const Posts: VFC<Props> = ({ posts }) => {
   return (
     <div css={girdContainer}>
       {posts.map((post) => {
@@ -16,7 +16,7 @@ export default function Posts({ posts }: Props) {
       })}
     </div>
   );
-}
+};
 
 const girdContainer = css`
   display: grid;

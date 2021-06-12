@@ -1,12 +1,12 @@
-import React from "react";
+import React, { VFC } from "react";
 import { FaLinkedin } from "react-icons/fa";
 
-import BlankButton from "../../atoms/common/BlankButton";
+import { BlankButton } from "../../atoms/common/BlankButton";
 
-export default function LinkedInLink() {
+export const LinkedInLink: VFC = () => {
   return (
     <BlankButton to="https://www.linkedin.com/">
       <FaLinkedin size="24" />
     </BlankButton>
   );
-}
+};

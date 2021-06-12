@@ -1,9 +1,13 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-export default function Backdrop({ onClose }) {
+type Props = {
+  onClose: () => void;
+};
+
+export const Backdrop: VFC<Props> = ({ onClose }) => {
   return <div onClick={onClose} css={style} />;
-}
+};
 
 const style = css`
   height: 100%;

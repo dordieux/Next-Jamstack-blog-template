@@ -1,12 +1,12 @@
-import React from "react";
+import React, { VFC } from "react";
 import { css } from "@emotion/react";
 
-import Title from "../../atoms/home/Title";
-import Subtitle from "../../atoms/home/Subtitle";
-import Text from "../../atoms/home/Text";
-import Scroll from "../../atoms/common/Scroll";
+import { Title } from "../../atoms/home/Title";
+import { Subtitle } from "../../atoms/home/Subtitle";
+import { Text } from "../../atoms/home/Text";
+import { Scroll } from "../../atoms/common/Scroll";
 
-export default function Blog() {
+export const Blog: VFC = () => {
   return (
     <section id="blog" css={section}>
       <div css={container}>
@@ -23,7 +23,7 @@ export default function Blog() {
       </div>
     </section>
   );
-}
+};
 
 const section = css`
   padding: 150px 0 100px;
